@@ -12,7 +12,7 @@ label {
   span.require::after {
     content: "(필수)";
     display: inline;
-    color: $c-red;
+    color: $c-jam-red;
     font-size: 1.1rem;
     margin-left: 2px;
   }
@@ -90,20 +90,16 @@ input {
   width: 100%;
   z-index: 100;
   position: absolute;
-  top: calc(100% - 30px);
+  top: calc(100% - 40px);
   transform: translateY(0);
   transition: top 0.5s ease-out, bottom 0.5s ease-out, transform 0.5s ease-out;
-  background: #ffffff;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
-}
 
-/* 확장된 상태: 상단 50px 위치에 고정 */
-.swipe-panel.expanded {
-  top: auto;
-  bottom: 0;
-}
+  &.expanded {
+    top: auto;
+    bottom: 0;
+  }
 
-/* 축소된 상태: 다시 하단 10% */
-.swipe-panel.collapsed {
-  top: calc(100% - 30px);
+  &.collapsed {
+    top: calc(100% - 40px);
+  }
 }

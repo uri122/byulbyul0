@@ -18,19 +18,9 @@ export default function AddStore() {
   const [storePos, setStorePos] = useState();
   const [storeAddr, setStoreAddr] = useState("");
   const [storeName, setStoreName] = useState("");
-  const [storeContact, setStoreContact] = useState({
-    cont01: "",
-    cont02: "",
-    cont03: "",
-  });
-  const [storeOpenHours, setStoreOpenHours] = useState({
-    hour: "",
-    minute: "",
-  });
-  const [storeClosedHours, setStoreClosedHours] = useState({
-    hour: "",
-    minute: "",
-  });
+  const [storeContact, setStoreContact] = useState(["", "", ""]);
+  const [storeOpenHours, setStoreOpenHours] = useState(["", ""]);
+  const [storeClosedHours, setStoreClosedHours] = useState(["", ""]);
   const [storeBestBread, setStoreBestBread] = useState("");
 
   /************ 지도 제어 시작  **************/
@@ -102,9 +92,9 @@ export default function AddStore() {
       name: storeName,
       latlng: storePos,
       addr: storeAddr,
-      contact: Object.values(storeContact).join("-"),
-      openHours: Object.values(storeOpenHours).join(":"),
-      closedHours: Object.values(storeClosedHours).join(":"),
+      contact: storeContact,
+      openHours: storeOpenHours,
+      closedHours: storeClosedHours,
       bestBread: storeBestBread,
     };
 
@@ -179,10 +169,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeContact.cont01}
+                value={storeContact[0]}
                 onChange={(e) => {
                   const newContract = { ...storeContact };
-                  newContract.cont01 = e.target.value.trim();
+                  newContract[0] = e.target.value.trim();
                   setStoreContact(newContract);
                 }}
               />
@@ -190,10 +180,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeContact.cont02}
+                value={storeContact[1]}
                 onChange={(e) => {
                   const newContract = { ...storeContact };
-                  newContract.cont02 = e.target.value.trim();
+                  newContract[1] = e.target.value.trim();
                   setStoreContact(newContract);
                 }}
               />
@@ -201,10 +191,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeContact.cont03}
+                value={storeContact[2]}
                 onChange={(e) => {
                   const newContract = { ...storeContact };
-                  newContract.cont03 = e.target.value.trim();
+                  newContract[2] = e.target.value.trim();
                   setStoreContact(newContract);
                 }}
               />
@@ -218,10 +208,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeOpenHours.hour}
+                value={storeOpenHours[0]}
                 onChange={(e) => {
                   const newHours = { ...storeOpenHours };
-                  newHours.hour = e.target.value.trim();
+                  newHours[0] = e.target.value.trim();
                   setStoreOpenHours(newHours);
                 }}
               />
@@ -229,10 +219,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeOpenHours.minute}
+                value={storeOpenHours[1]}
                 onChange={(e) => {
                   const newHours = { ...storeOpenHours };
-                  newHours.minute = e.target.value.trim();
+                  newHours[1] = e.target.value.trim();
                   setStoreOpenHours(newHours);
                 }}
               />
@@ -240,10 +230,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeClosedHours.hour}
+                value={storeClosedHours[0]}
                 onChange={(e) => {
                   const newHours = { ...storeClosedHours };
-                  newHours.hour = e.target.value.trim();
+                  newHours[0] = e.target.value.trim();
                   setStoreClosedHours(newHours);
                 }}
               />
@@ -251,10 +241,10 @@ export default function AddStore() {
               <input
                 type="text"
                 className="ta-c"
-                value={storeClosedHours.minute}
+                value={storeClosedHours[1]}
                 onChange={(e) => {
                   const newHours = { ...storeClosedHours };
-                  newHours.minute = e.target.value.trim();
+                  newHours[1] = e.target.value.trim();
                   setStoreClosedHours(newHours);
                 }}
               />
