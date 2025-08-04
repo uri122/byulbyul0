@@ -1,0 +1,22 @@
+@use "@styles/abstracts" as *;
+
+.store-info {
+  padding: 15px 20px;
+  // font-size: 14px;
+  // border: 1px solid $c-grey;
+  background-color: $c-grey-light;
+  border-radius: 10px;
+
+  .store-name {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  & + .store-info {
+    margin-top: 20px;
+  }
+}

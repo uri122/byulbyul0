@@ -1,0 +1,27 @@
+@use "@styles/abstracts" as *;
+
+header {
+  width: 100%;
+  height: $page-header-height;
+  background-color: $c-white;
+  text-align: center;
+  position: fixed;
+  z-index: 1000;
+
+  span.page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: $page-header-height;
+  }
+
+  .btn-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

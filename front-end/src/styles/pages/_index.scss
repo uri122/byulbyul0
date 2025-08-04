@@ -1,0 +1,17 @@
+@forward "home";
+@forward "addStore";
+
+@use "@styles/abstracts" as *;
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.main-section {
+  width: 100%;
+  height: calc(100% - $main-toolbar-height);
+  position: relative;
+  overflow: hidden;
+  background-color: $c-white;
+}

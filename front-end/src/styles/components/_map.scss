@@ -1,0 +1,30 @@
+@use "@styles/abstracts" as *;
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 1px solid $c-grey;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+button.cur-pos {
+  width: 30px;
+  height: 30px;
+  background-color: $c-primary;
+  color: $c-white;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(100% - 80px);
+  right: 20px;
+  z-index: 100;
+}
+
+.center-Maker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 32px)); // 마커 높이 절반
+  z-index: 10;
+}
